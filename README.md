@@ -175,6 +175,4 @@ Ferramentas sugeridas:
 
 ---
 
-## 👨‍💻 Autor
 
-Desenvolvido por **[Seu Nome]**
