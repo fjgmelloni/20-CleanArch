@@ -29,7 +29,7 @@ func (s *OrderService) ListOrders(ctx context.Context, in *pb.Empty) (*pb.ListOr
 	}
 
 	var grpcOrders []*pb.Order
-	for _, o := range orders {
+	for _, o := range orders.Orders {
 		grpcOrders = append(grpcOrders, &pb.Order{
 			Id:         o.ID,
 			Price:      float32(o.Price),
@@ -42,7 +42,6 @@ func (s *OrderService) ListOrders(ctx context.Context, in *pb.Empty) (*pb.ListOr
 		Orders: grpcOrders,
 	}, nil
 }
-
 
 func (s *OrderService) CreateOrder(ctx context.Context, in *pb.CreateOrderRequest) (*pb.CreateOrderResponse, error) {
 	dto := usecase.OrderInputDTO{
